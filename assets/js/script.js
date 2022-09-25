@@ -20,15 +20,23 @@ function getData() {
     })
     .then(function (data) {
       console.log(data);
-      var currentWeather = document.createElement("div");
-      currentWeather.textContent = data.main.temp_max;
-      // Write the MATH LOGIC TO CONVERT KELVIN TO FAHRENHEIT HAHAHAHAH
-      currentCard.append(currentWeather);
+      var currentTemp = document.createElement("p");
+      currentTemp.textContent = "Temp: " + data.main.temp_max + "°F";
+      var currentHumidity = document.createElement("p");
+      currentHumidity.textContent = " Humidity: " + data.main.humidity + "%";
+      var currentWind = document.createElement("p");
+      currentWind.textContent =  " Wind: " + data.wind.speed + " MPH";
+      currentCard.append(currentTemp);
+      currentCard.append(currentHumidity);
+      currentCard.append(currentWind);
+
+    });
+}
+clickSearch.addEventListener("click", getData);
+
+
       //   for (var i = 0; i < data.length; i++) {
       //     var currentWeather = document.createElement("div");
       //     currentWeather.textContent = data[i].main[0].main[3].wind[1];
       //     currentCard.append(currentWeather);
-      //   }
-    });
-}
-clickSearch.addEventListener("click", getData);
+      //   }for other cards
