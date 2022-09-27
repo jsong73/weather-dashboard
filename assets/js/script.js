@@ -4,7 +4,8 @@ var city = "";
 
 var clickSearch = document.getElementById("search-btn");
 var currentCard = document.getElementById("current-card");
-var inputBox = document.getElementById("search-bar")
+var inputBox = document.getElementById("search-bar");
+var futureWeatherCards = document.getElementById("five-day-cards");
 
 
 function getData(event) {
@@ -26,6 +27,10 @@ function getData(event) {
     })
     .then(function (data) {
       console.log(data);
+
+      var latVar = data.coord.lat;
+      var lonVar = data.coord.lon;
+  
       var tempEl = document.createElement("p");
       tempEl.textContent = "Temp: " + data.main.temp_max + "°F";
       var humidityEl = document.createElement("p");
@@ -35,13 +40,27 @@ function getData(event) {
       currentCard.append(tempEl);
       currentCard.append(humidityEl);
       currentCard.append(windEl);
+      getForecastCards(latVar, lonVar);
+    
     });
 }
 clickSearch.addEventListener("click", getData);
 
-    function
-        for (var i = 0; i < data.length; i++) {
-          var currentWeather = document.createElement("div");
-          currentWeather.textContent = data[i].main[0].main[3].wind[1];
-          currentCard.append(currentWeather);
-        }
+function getForecastCards(latVar, lonVar){
+    var apiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latVar + "&lon=" + lonVar + "&units=imperial&exclude=minutely,hourly&appid=d91f911bcf2c0f925fb6535547a5ddc9"
+
+    fetch(apiUrl)
+    .then(function(response){
+        return response.json();
+    }).then(function(data){
+        console.log(data)
+        for (var i = 0; i < 5; i++) {
+            var dailyWeather = document.createElement("div");
+            dailyWeather.textContent = data.daily[i].temp.max;
+            futureWeatherCards.append(dailyWeather);
+          }
+    });
+
+    }
+    // getForecastCards();
+//
