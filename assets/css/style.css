@@ -31,3 +31,16 @@ input{
     height: 35px;
     width: 292px;
 }
+
+#current-card{
+border: 1px solid;
+width: 1000px;
+height: 275px;
+position: relative;
+margin-right: 550px;
+margin-left: auto;
+margin-top: -150px;
+font-size: 20px;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}

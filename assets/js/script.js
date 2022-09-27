@@ -1,42 +1,47 @@
 var weatherApiKey = "ab07125a22cc73e0964ebddfb1d89370";
 var weatherQueryUrl = "https://api.openweathermap.org";
-var city = "atlanta";
+var city = "";
 
 var clickSearch = document.getElementById("search-btn");
 var currentCard = document.getElementById("current-card");
-// https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+var inputBox = document.getElementById("search-bar")
 
-function getData() {
+
+function getData(event) {
+    event.preventDefault(); // shows form
+    city = inputBox.value; // gets city value from user input from search bar
+    currentCard.textContent = " "; //empties out previous city data
+
   var requestUrl =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     city +
-    "&units=imperial" +
+    "&units=imperial" + //converts API unit from kelvin to farenheight
     "&appid=" +
     weatherApiKey;
 
+//grabbing the current cards wind, humidity and temp
   fetch(requestUrl)
-    .then(function (response) {
+    .then(function (response) {  
       return response.json();
     })
     .then(function (data) {
       console.log(data);
-      var currentTemp = document.createElement("p");
-      currentTemp.textContent = "Temp: " + data.main.temp_max + "°F";
-      var currentHumidity = document.createElement("p");
-      currentHumidity.textContent = " Humidity: " + data.main.humidity + "%";
-      var currentWind = document.createElement("p");
-      currentWind.textContent =  " Wind: " + data.wind.speed + " MPH";
-      currentCard.append(currentTemp);
-      currentCard.append(currentHumidity);
-      currentCard.append(currentWind);
-
+      var tempEl = document.createElement("p");
+      tempEl.textContent = "Temp: " + data.main.temp_max + "°F";
+      var humidityEl = document.createElement("p");
+      humidityEl.textContent = " Humidity: " + data.main.humidity + "%";
+      var windEl = document.createElement("p");
+      windEl.textContent =  " Wind: " + data.wind.speed + " MPH";
+      currentCard.append(tempEl);
+      currentCard.append(humidityEl);
+      currentCard.append(windEl);
     });
 }
 clickSearch.addEventListener("click", getData);
 
-
-      //   for (var i = 0; i < data.length; i++) {
-      //     var currentWeather = document.createElement("div");
-      //     currentWeather.textContent = data[i].main[0].main[3].wind[1];
-      //     currentCard.append(currentWeather);
-      //   }for other cards
+    function
+        for (var i = 0; i < data.length; i++) {
+          var currentWeather = document.createElement("div");
+          currentWeather.textContent = data[i].main[0].main[3].wind[1];
+          currentCard.append(currentWeather);
+        }
