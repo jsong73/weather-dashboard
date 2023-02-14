@@ -32,11 +32,15 @@ input{
     width: 292px;
 }
 
+h3{
+    font-size: 30px;
+}
+
 #current-card{
     background-color:  rgb(27, 27, 131);
     color: white;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 1px solid;
     width: 1000px;
     height: 275px;

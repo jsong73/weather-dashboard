@@ -30,13 +30,22 @@ function getData(event) {
 
       var latVar = data.coord.lat;
       var lonVar = data.coord.lon;
-  
+      
+      var cityElement = document.createElement("h3")
+      cityElement.textContent= `Today's forcast for ${data.name}`;
+    
+      var weatherIcon = document.createElement("img")
+      weatherIcon.setAttribute("src", data.weather[0].icon)
+      console.log(data.weather[0].icon)
+
       var tempEl = document.createElement("p");
       tempEl.textContent = "Temp: " + data.main.temp_max + "°F";
       var humidityEl = document.createElement("p");
       humidityEl.textContent = " Humidity: " + data.main.humidity + "%";
       var windEl = document.createElement("p");
       windEl.textContent =  " Wind: " + data.wind.speed + " MPH";
+      currentCard.append(cityElement)
+      currentCard.append(weatherIcon)
       currentCard.append(tempEl);
       currentCard.append(humidityEl);
       currentCard.append(windEl);
