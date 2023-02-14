@@ -46,8 +46,16 @@ h3{
     height: 275px;
     position: relative;
     bottom: 150px;
-    margin-right: 550px;
+    margin-right: 350px;
     margin-left: auto;
     font-size: 20px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+div{
+    border: 1px solid;
+    display: inline-flexbox;
+    padding:20px;
+    margin: 5px;
+    
 }

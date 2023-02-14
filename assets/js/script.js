@@ -33,10 +33,7 @@ function getData(event) {
       
       var cityElement = document.createElement("h3")
       cityElement.textContent= `Today's forcast for ${data.name}`;
-    
-      var weatherIcon = document.createElement("img")
-      weatherIcon.setAttribute("src", data.weather[0].icon)
-      console.log(data.weather[0].icon)
+
 
       var tempEl = document.createElement("p");
       tempEl.textContent = "Temp: " + data.main.temp_max + "°F";
@@ -45,7 +42,7 @@ function getData(event) {
       var windEl = document.createElement("p");
       windEl.textContent =  " Wind: " + data.wind.speed + " MPH";
       currentCard.append(cityElement)
-      currentCard.append(weatherIcon)
+
       currentCard.append(tempEl);
       currentCard.append(humidityEl);
       currentCard.append(windEl);
@@ -65,7 +62,7 @@ function getForecastCards(latVar, lonVar){
         console.log(data)
         for (var i = 0; i < 5; i++) {
             var dailyWeather = document.createElement("div");
-            dailyWeather.textContent = data.daily[i].temp.max;
+            dailyWeather.textContent = "Temp: " + data.daily[i].temp.max + "°F";
             futureWeatherCards.append(dailyWeather);
           }
     });
