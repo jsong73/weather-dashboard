@@ -54,7 +54,11 @@ clickSearch.addEventListener("click", getData);
 
 function getForecastCards(latVar, lonVar){
     var apiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latVar + "&lon=" + lonVar + "&units=imperial&exclude=minutely,hourly&appid=d91f911bcf2c0f925fb6535547a5ddc9"
-
+    
+    var futureWeather= document.createElement("h4");
+    futureWeather.textContent = `Next 5 day forcast for ${city}`
+    futureWeatherCards.append(futureWeather);
+    
     fetch(apiUrl)
     .then(function(response){
         return response.json();

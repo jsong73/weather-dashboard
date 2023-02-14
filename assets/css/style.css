@@ -54,14 +54,17 @@ h3{
 
 #five-day-cards{
     border: 1px solid #000;
-    display: inline-block;
-    padding: 20px;
-    margin: 5px;
     background-color:  rgb(27, 27, 131);
     color: white;
     text-align: center;
+    border-radius: 10px;
+    border: 1px solid;
+    width: 1000px;
+    height: 275px;
     position: relative;
     bottom: 150px;
     margin-right: 350px;
     margin-left: auto;
+    font-size: 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
