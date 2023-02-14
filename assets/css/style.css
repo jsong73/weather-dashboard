@@ -52,10 +52,16 @@ h3{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-div{
-    border: 1px solid;
-    display: inline-flexbox;
-    padding:20px;
+#five-day-cards{
+    border: 1px solid #000;
+    display: inline-block;
+    padding: 20px;
     margin: 5px;
-    
+    background-color:  rgb(27, 27, 131);
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 150px;
+    margin-right: 350px;
+    margin-left: auto;
 }
