@@ -16,7 +16,7 @@ body{
 h2{
     font-size: 35px;
     margin-left: 10px;
-    margin-top:10px;
+    margin-top:40px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -33,14 +33,17 @@ input{
 }
 
 #current-card{
-border: 1px solid;
-width: 1000px;
-height: 275px;
-position: relative;
-margin-right: 550px;
-margin-left: auto;
-margin-top: -150px;
-font-size: 20px;
-font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+    background-color:  rgb(27, 27, 131);
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid;
+    width: 1000px;
+    height: 275px;
+    position: relative;
+    bottom: 150px;
+    margin-right: 550px;
+    margin-left: auto;
+    font-size: 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

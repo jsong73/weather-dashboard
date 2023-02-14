@@ -63,4 +63,3 @@ function getForecastCards(latVar, lonVar){
 
     }
     // getForecastCards();
-//
